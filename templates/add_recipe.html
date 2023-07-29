@@ -18,11 +18,9 @@
                 <i class="fa-solid fa-bowl-food prefix light-green-text text-darken-4"></i>
                 <select>
                     <option value="" disabled selected>Select your Cuisine</option>
-                    <option value="1">American</option>
-                    <option value="2">Chinese</option>
-                    <option value="2">Mexican</option>
-                    <option value="3">Indian</option>
-                    <option value="3">Spanish</option>
+                    {%  for category in categories %}
+                    <option value="{{ category.recipe_name }}">{{ category.recipe_name }}</option>
+                    {% endfor %}
                 </select>
                 <label>Select Your Cuisine</label>
             </div>
