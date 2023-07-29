@@ -109,7 +109,7 @@ def add_recipe():
             "recipe_description": request.form.get("recipe_description"),
             "created_by": session["user"]
         }
-        mongo.db.tasks.insert_one(request.form.to.dict())
+        mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
         return redirect(url_for("get_recipes"))
     categories = mongo.db.categories.find().sort("category_name", 1)
