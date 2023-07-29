@@ -8,9 +8,12 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fa-solid fa-scroll prefix light-green-text text-darken-4"></i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">Recipe Name</label>
+                <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate"
+                    required>
+                <label for="recipe_name">Recipe Name</label>
             </div>
+        </div>
+        <div class="row">
             <div class="input-field col s12">
                 <i class="fa-solid fa-bowl-food prefix light-green-text text-darken-4"></i>
                 <select>
@@ -23,6 +26,18 @@
                 </select>
                 <label>Materialize Select</label>
             </div>
+        </div>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fa-solid fa-list-check prefix light-green-text text-darken-4"></i>
+                        <textarea id="recipe_description" name="recipe_description" minlength="5" maxlength="500"
+                            class="materialize-textarea"></textarea>
+                        <label for="recipe_description">Recipe Instructions</label>
+                    </div>
+                </div>
+            </form>
         </div>
     </form>
 </div>
