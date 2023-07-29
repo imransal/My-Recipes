@@ -3,4 +3,28 @@
 
 <h3 class="light-green-text text-darken-4 center-align">Add Recipe</h3>
 
+<div class="row">
+    <form class="col s12" method="POST" action="">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fa-solid fa-scroll prefix light-green-text text-darken-4"></i>
+                <input id="icon_prefix" type="text" class="validate">
+                <label for="icon_prefix">First Name</label>
+            </div>
+            <div class="input-field col s12">
+                <i class="fa-solid fa-bowl-food prefix light-green-text text-darken-4"></i>
+                <select>
+                    <option value="" disabled selected>Choose your Cuisine</option>
+                    <option value="1">American</option>
+                    <option value="2">Chinese</option>
+                    <option value="2">Mexican</option>
+                    <option value="3">Indian</option>
+                    <option value="3">Spanish</option>
+                </select>
+                <label>Materialize Select</label>
+            </div>
+        </div>
+    </form>
+</div>
+
 {% endblock %}
