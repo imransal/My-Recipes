@@ -19,7 +19,7 @@
                 <select>
                     <option value="" disabled selected>Select your Cuisine</option>
                     {%  for category in categories %}
-                    <option value="{{ category.recipe_name }}">{{ category.recipe_name }}</option>
+                        <option value="{{ category.recipe_name }}">{{ category.recipe_name }}</option>
                     {% endfor %}
                 </select>
                 <label>Select Your Cuisine</label>
