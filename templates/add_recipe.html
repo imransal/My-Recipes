@@ -17,27 +17,23 @@
             <div class="input-field col s12">
                 <i class="fa-solid fa-bowl-food prefix light-green-text text-darken-4"></i>
                 <select>
-                    <option value="" disabled selected>Choose your Cuisine</option>
+                    <option value="" disabled selected>Select your Cuisine</option>
                     <option value="1">American</option>
                     <option value="2">Chinese</option>
                     <option value="2">Mexican</option>
                     <option value="3">Indian</option>
                     <option value="3">Spanish</option>
                 </select>
-                <label>Materialize Select</label>
+                <label>Select Your Cuisine</label>
             </div>
         </div>
         <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fa-solid fa-list-check prefix light-green-text text-darken-4"></i>
-                        <textarea id="recipe_description" name="recipe_description" minlength="5" maxlength="500"
-                            class="materialize-textarea"></textarea>
-                        <label for="recipe_description">Recipe Instructions</label>
-                    </div>
-                </div>
-            </form>
+            <div class="input-field col s12">
+                <i class="fas fa-align-left prefix light-green-text text-darken-4"></i>
+                <textarea name="recipe_description" id="recipe_description" minlength="5" maxlength="500"
+                    class="materialize-textarea validate" required></textarea>
+                <label for="recipe_description">Recipe Description</label>
+            </div>
         </div>
     </form>
 </div>
