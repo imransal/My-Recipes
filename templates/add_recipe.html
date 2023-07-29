@@ -13,18 +13,18 @@
                 <label for="recipe_name">Recipe Name</label>
             </div>
         </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fa-solid fa-bowl-food prefix light-green-text text-darken-4"></i>
-                <select>
-                    <option value="" disabled selected>Select your Cuisine</option>
-                    {%  for category in categories %}
-                        <option value="{{ category.recipe_name }}">{{ category.recipe_name }}</option>
-                    {% endfor %}
-                </select>
-                <label>Select Your Cuisine</label>
-            </div>
-        </div>
+       <div class="row">
+				<div class="input-field col s12">
+                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+					<select id="category_name" name="category_name" class="validate" required>
+                        <option value="" disabled selected>Select Your Cuisine</option>
+                        {% for category in categories %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endfor %}
+                    </select>
+					<label for="category_name">Cuisine</label>
+				</div>
+			</div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="fa-solid fa-clock prefix light-green-text text-darken-4"></i>
