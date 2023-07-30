@@ -14,13 +14,19 @@
     {% for recipe in recipes %}
     <li>
         <div class="collapsible-header white-text light-green darken-4 text-shadow">
-            <i class="fas fa-caret-down"></i>
-            <strong>{{ recipe.recipe_name }}</strong>
+            <div class="col s3">
+                <i class="fas fa-caret-down"></i>
+                <a href="" class="btn-small green accent-4">Done</a>
+                <a href="" class="btn-small light-blue accent-4">Edit</a>
+            </div>
+            <div class="col s3">
+                <strong>{{ recipe.recipe_name }}</strong>   
+            </div>
         </div>
         <div class="collapsible-body">
             Cuisine: <strong>{{ recipe.category_name }}</strong><br>
             Prep Time: <strong>{{ recipe.prep_time }}</strong><br>
-            Cook Time: <strong>{{ recipe.cook_time }}</strong>
+            Cook Time: <strong>{{ recipe.cook_time }}</strong>            
             <p>Chef: {{ recipe.created_by }}</p>
         </div>
     </li>
