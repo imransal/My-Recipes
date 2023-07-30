@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h3 class="light-green-text text-darken-4 center-align">All Recipes</h3>
+
 <!-- {% for recipe in recipes %}
 {{ recipe.recipe_name }}<br>
 {{ recipe.category_name }}<br>
@@ -16,7 +18,9 @@
             <strong>{{ recipe.recipe_name }}</strong>
         </div>
         <div class="collapsible-body">
-            Cuisine: <strong>{{ recipe.category_name }}</strong>
+            Cuisine: <strong>{{ recipe.category_name }}</strong><br>
+            Prep Time: <strong>{{ recipe.prep_time }}</strong><br>
+            Cook Time: <strong>{{ recipe.cook_time }}</strong>
             <p>Chef: {{ recipe.created_by }}</p>
         </div>
     </li>
