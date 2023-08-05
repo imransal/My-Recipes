@@ -161,6 +161,11 @@ def add_category():
 
     return render_template("add_category.html")
 
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    return render_template("edit_category.html", category=category)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
