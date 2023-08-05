@@ -134,11 +134,11 @@ def edit_recipe(recipe_id):
         is_urgent = "on" if request.form.get("is_urgent") else "off"
         submit = {
             "category_name": request.form.get("category_name"),
-            "recipe_name": request.form.get("recipe"),
+            "recipe_name": request.form.get("recipe_name"),
             "prep_time": request.form.get("prep_time"),
             "cook_time": request.form.get("cook_time"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
-            "recipe_description": request.form.get("recipe"),
+            "recipe_description": request.form.get("recipe_description"),
             "created_by": session["user"]
         }
         mongo.db.recipes.replace_one({"_id": ObjectId(recipe_id)}, submit)
