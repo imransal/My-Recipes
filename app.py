@@ -149,6 +149,10 @@ def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
 
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    return render_template("add_category.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
