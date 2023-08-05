@@ -106,6 +106,7 @@ def add_recipe():
             "recipe_name": request.form.get("recipe_name"),
             "prep_time": request.form.get("prep_time"),
             "cook_time": request.form.get("cook_time"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
             "recipe_description": request.form.get("recipe_description"),
             "created_by": session["user"]
         }
@@ -126,6 +127,7 @@ def edit_recipe(recipe_id):
             "recipe_name": request.form.get("recipe"),
             "prep_time": request.form.get("prep_time"),
             "cook_time": request.form.get("cook_time"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
             "recipe_description": request.form.get("recipe"),
             "created_by": session["user"]
         }
