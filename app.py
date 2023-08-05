@@ -128,7 +128,7 @@ def edit_recipe(recipe_id):
             "recipe_description": request.form.get("recipe_description"),
             "created_by": session["user"]
         }
-        mongo.db.recipes.update({"_id": ObjectId()}, submit)
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
         
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
