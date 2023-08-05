@@ -167,7 +167,7 @@ def edit_category(category_id):
         submit = {
             "category_name": request.form.get("category_name")
         }
-        mango.db.categories.replace_one({"_id": ObjectId(category_id)},submit)
+        mongo.db.categories.replace_one({"_id": ObjectId(category_id)},submit)
         flash("Cuisine Successfully Updated")
         return redirect(url_for("get_categories"))
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
