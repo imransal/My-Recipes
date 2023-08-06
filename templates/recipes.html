@@ -39,6 +39,10 @@
             <div class="col s3">
                 
                 <a href="{{ url_for('recipe_description', recipe_id=recipe._id)}}" class="white-text"><strong>{{ recipe.recipe_name }}</strong></a>
+                <br>
+                {% if session.user|lower == recipe.created_by|lower %}
+                    <a class="btn-small green accent-4">Your Recipe</a>
+                {% endif %}
             </div>
         </div>
     </li>
