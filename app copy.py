@@ -19,29 +19,21 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/home")
-def home():
-    return render_template("home.html")
-
-
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
-
 
 @app.route("/recipe_description/<recipe_id>")
 def recipe_description(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("recipe_description.html", recipe=the_recipe)
 
-
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("recipes.html", recipes=recipes)
-
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -94,12 +86,6 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
-
-
-@app.route("/articles")
-def articles():
-    # Renders the articles.html page
-    return render_template("articles.html")
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
@@ -162,19 +148,16 @@ def edit_recipe(recipe_id):
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
-
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Removed")
     return redirect(url_for("get_recipes"))
 
-
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
-
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
@@ -188,19 +171,17 @@ def add_category():
 
     return render_template("add_category.html")
 
-
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name")
         }
-        mongo.db.categories.replace_one({"_id": ObjectId(category_id)}, submit)
+        mongo.db.categories.replace_one({"_id": ObjectId(category_id)},submit)
         flash("Cuisine Successfully Updated")
         return redirect(url_for("get_categories"))
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
-
 
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):

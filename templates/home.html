@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Landing Page First Section -->
+<div class="hero-img"></div>
+<div class="present">
+    <h3>My Recipes</h3>
+    <h5>Recipes At Your Fingertips</h5>
+    <div class="btn-wrapper">
+        <a href="{{ url_for('get_recipes') }}" class="btn-large light-green text-shadow">
+            Recipes <i class="fas fa-bowl-food right"></i>
+        </a>
+    </div>
+</div>
+
+<!-- Introduction -->
+<h3 class="center-align"> Why My Recipes? </h3>
+<hr class="hr-mb">
+<div class="row desk-width ">
+    <div class="col s12">
+        <div class="center-text">
+            <p>Say hello to our game-changing recipe website! It's designed to be easy-to-use,
+                allowing chefs to register and share their recipes hassle-free. You can edit and delete your creations
+                anytime, making it a perfect hub to manage your masterpieces effortlessly.
+            </p>
+            <p>We're all about making life easier for chefs! Our passion project revolves around simplifying recipe
+                management. No more
+                fussing with complicated systems. Just a user-friendly website that lets you preserve and update your
+                recipes like a
+                breeze. So you can spend more time honing your culinary skills and less time dealing with tech stuff.
+            </p>
+            <p>Ready to join the foodie community? Get on board our recipe website and explore a world of diverse
+                dishes! Share your
+                favorite recipes and discover unique creations from fellow food enthusiasts. Whether you're an aspiring
+                home cook or a
+                seasoned pro, this platform is your playground to exchange ideas, connect, and indulge in the joy of
+                cooking together.
+                So dive in and let your culinary exploration run wild!
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Sign Up Now -->
+<h3 class="center-align"> Sign Up Now! </h3>
+<hr class="hr-mb">
+<div class="row desk-width ">
+    <div class="col s12">
+        <div class="center-text">
+            <p>Start saving your recipes today!</p><a href="{{ url_for('register') }}"
+                class="btn-large light-green text-shadow">
+                Register <i class="fas fa-sign-in-alt right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
