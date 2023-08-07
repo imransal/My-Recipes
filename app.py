@@ -209,6 +209,13 @@ def delete_category(category_id):
     return redirect(url_for('get_categories'))
 
 
+@app.route('/upvote/<recipe_id>', methods=["POST"])
+def upvote(recipe_id):
+    mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)}, {"$inc":
+                                                               {'upvotes': 1}})
+    return redirect(url_for('recipe_description', recipe_id=recipe_id))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
