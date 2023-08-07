@@ -2,7 +2,7 @@
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
-.flashes h4{
+.flashes h4 {
     line-height: 2px;
 }
 
@@ -14,3 +14,41 @@
     margin: 5px;
     line-height: 42px;
 }
+
+.hero-img {
+    height: 100vh;
+    max-width: 100% !important;
+    background: url(/static/images/hero.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 1000px;
+    width: 100% !important;
+}
+
+.opaque-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+.hero-content {
+    margin-top: 25rem;
+    color: white;
+    word-spacing: 5px;
+ 
+   line-height: 1rem;
+}
+
+.btn-wrapper {
+    line-height: 1rem;
