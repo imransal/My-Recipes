@@ -45,7 +45,7 @@
                     <p>Chef: {{ recipe.created_by }}</p>
                     </div>
                     <div class="card-action">
-                    <button class="btn-small light-green center-align" href="{{ url_for('recipe_description', recipe_id=recipe._id)}}">View Recipe</button>
+                    <a class="btn-small light-green center-align" href="{{ url_for('recipe_description', recipe_id=recipe._id)}}">View Recipe </a>
                     <form class="" action="{{ url_for('upvote', recipe_id=recipe._id)}}" method="POST">
                     <button class="btn-small light-green center-align" type="submit"><i
                             class="fa-regular fa-heart center-align">
