@@ -44,15 +44,15 @@
                     <p>Cook Time: {{ recipe.cook_time }}</p>
                     <p>Chef: {{ recipe.created_by }}</p>
                     {% if session.user|lower == recipe.created_by|lower %}
-                        <a class="btn-small light-green lighten-1">Your Recipe</a>
+                        <a class="btn-small light-red lighten-1">Your Recipe</a>
                     {% endif %}
                     </div>
                     <div class="card-action">
                     <a class="btn-small light-green center-align" href="{{ url_for('recipe_description', recipe_id=recipe._id)}}">View Recipe </a>
                     <form class="" action="{{ url_for('upvote', recipe_id=recipe._id)}}" method="POST">
-                    <button class="btn-small light-green center-align" type="submit"><i
+                    <button class="btn-small light-green center-align" type="submit">Like <i
                             class="fa-regular fa-heart center-align">
-                        </i>{{recipe.upvotes}}</button>
+                        </i> {{recipe.upvotes}}</button>
                 </form>
                     </div>
                 </div>
