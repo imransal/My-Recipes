@@ -1,10 +1,9 @@
 import os
-from flask import (
-    Flask, flash, render_template,
-    redirect, request, session, url_for)
+from flask import Flask, flash, render_template, redirect, request, session, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+
 if os.path.exists("env.py"):
     import env
 
@@ -48,7 +47,8 @@ def register():
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+            {"username": request.form.get("username").lower()}
+        )
 
         if existing_user:
             flash("Username already exists")
@@ -56,7 +56,7 @@ def register():
 
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
         }
         mongo.db.users.insert_one(register)
 
@@ -72,17 +72,17 @@ def login():
     if request.method == "POST":
         # check if username exists in db
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+            {"username": request.form.get("username").lower()}
+        )
 
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                    existing_user["password"], request.form.get("password")):
+                existing_user["password"], request.form.get("password")
+            ):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(
-                    request.form.get("username")))
-                return redirect(url_for(
-                    "profile", username=session["user"]))
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -132,7 +132,7 @@ def add_recipe():
             "cook_time": request.form.get("cook_time"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
             "recipe_description": request.form.get("recipe_description"),
-            "created_by": session["user"]
+            "created_by": session["user"],
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
@@ -153,7 +153,7 @@ def edit_recipe(recipe_id):
             "cook_time": request.form.get("cook_time"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
             "recipe_description": request.form.get("recipe_description"),
-            "created_by": session["user"]
+            "created_by": session["user"],
         }
         mongo.db.recipes.replace_one({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
@@ -179,9 +179,7 @@ def get_categories():
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
-        category = {
-            "category_name": request.form.get("category_name")
-        }
+        category = {"category_name": request.form.get("category_name")}
         mongo.db.categories.insert_one(category)
         flash("New Cuisine Added")
         return redirect(url_for("get_categories"))
@@ -192,9 +190,7 @@ def add_category():
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
-        submit = {
-            "category_name": request.form.get("category_name")
-        }
+        submit = {"category_name": request.form.get("category_name")}
         mongo.db.categories.replace_one({"_id": ObjectId(category_id)}, submit)
         flash("Cuisine Successfully Updated")
         return redirect(url_for("get_categories"))
@@ -206,17 +202,16 @@ def edit_category(category_id):
 def delete_category(category_id):
     mongo.db.categories.delete_one({"_id": ObjectId(category_id)})
     flash("Cusine Successfully Deleted")
-    return redirect(url_for('get_categories'))
+    return redirect(url_for("get_categories"))
 
 
-@app.route('/upvote/<recipe_id>', methods=["POST"])
+@app.route("/upvote/<recipe_id>", methods=["POST"])
 def upvote(recipe_id):
-    mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)}, {"$inc":
-                                                               {'upvotes': 1}})
-    return redirect(url_for('recipe_description', recipe_id=recipe_id))
+    mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)}, {
+                                "$inc": {"upvotes": 1}})
+    return redirect(url_for("recipe_description", recipe_id=recipe_id))
 
 
 if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")),
-            debug=True)
+    app.run(host=os.environ.get("IP"), port=int(
+        os.environ.get("PORT")), debug=True)
