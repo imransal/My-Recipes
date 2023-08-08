@@ -109,7 +109,7 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("recipes.html", username=username)
+        return render_template("home.html", username=username)
 
     return redirect(url_for("login"))
 
