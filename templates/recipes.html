@@ -43,6 +43,9 @@
                     <p>Prep Time: {{ recipe.prep_time }}</p>
                     <p>Cook Time: {{ recipe.cook_time }}</p>
                     <p>Chef: {{ recipe.created_by }}</p>
+                    {% if session.user|lower == recipe.created_by|lower %}
+                        <a class="btn-small light-green lighten-1">Your Recipe</a>
+                    {% endif %}
                     </div>
                     <div class="card-action">
                     <a class="btn-small light-green center-align" href="{{ url_for('recipe_description', recipe_id=recipe._id)}}">View Recipe </a>
