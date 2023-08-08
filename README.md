@@ -230,6 +230,7 @@ To test database functionality for the project, the following steps were taken:
 Performance can be improved by using next gen images or compressing them.
 
 [Lighthouse - Mobile](https://github.com/imransal/My-Recipes/blob/main/documentation/Lighthouse%20-%20Mobile.pdf)
+
 [Lighthouse - Desktop](https://github.com/imransal/My-Recipes/blob/main/documentation/Lighthouse%20-%20Desktop.pdf)
 
 ## Code Validation
