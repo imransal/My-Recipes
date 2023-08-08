@@ -50,5 +50,15 @@
    line-height: 1rem;
 }
 
-.btn-wrapper {
-    line-height: 1rem;
+.recipe-description{
+    padding-top: 5rem;
+}
+
+.upvotes {
+    padding-top: 5rem;
+    padding: 1rem;
+}
+
+.paragraph-details {
+    padding-top: 2rem;
+}

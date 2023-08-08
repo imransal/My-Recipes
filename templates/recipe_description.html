@@ -1,35 +1,21 @@
 {% extends 'base.html'%} {% block content %}
 <div class="container recipes-padding">
     <!--This page will display all information regarding a recipe-->
-    <div>
-        <h4>{{recipe.recipe_name}}</h4>
+    <div class="recipe-description center-align">
+        <h4>{{recipe.recipe_name}}</h4>        
     </div>
-    <div class="recipe-author">
-        <i>- {{recipe.created_by}} - {{ recipe.prep_time }} prep time </i>-
+    <div class="center-align">
+        <i><strong>Chef:</strong> {{recipe.created_by}}<br> <strong>Prep Time:</strong> {{ recipe.prep_time }}<br> <strong>Cook Time:</strong> {{recipe.cook_time}}</i>
         <form class="" action="{{ url_for('upvote', recipe_id=recipe._id)}}" method="POST">
             <button class="btn-small light-green" type="submit"><i class="fa-regular fa-heart">
                     Like
-                </i></button>
-        </form>{{recipe.upvotes}}
-
+                </i><i class="upvotes">{{recipe.upvotes}}</i></button>
+        </form>
     </div>
-
-    <div class="inline-details">
-        <div class="col-xs-6 col-md-3 no-side-padding">
-            <p>Prep: {{recipe.prep_time}} </p>
-        </div>
-        <div class="col-xs-6 col-md-3 no-side-padding">
-            <p>Cooking: {{recipe.cook_time}} </p>
-        </div>
-        <div class="col-xs-6 col-md-3 no-side-padding">
-            <p>Cuisine: {{recipe.category_name}}</p>
-        </div>
-        <div>
-            <p>Chef: - {{recipe.created_by}}</p>
-        </div>
-    </div>
-
     <div class="paragraph-details">
+        <div>
+        <h5>Cuisine: {{recipe.category_name}}</h5>       
+    </div>
 
         <h5>Ingredients</h5>
         <p>{{recipe.recipe_ingredients}}</p>
