@@ -44,7 +44,7 @@
                     <p>Cook Time: {{ recipe.cook_time }}</p>
                     <p>Chef: {{ recipe.created_by }}</p>
                     {% if session.user|lower == recipe.created_by|lower %}
-                        <a class="btn-small red lighten-1">Your Recipe</a>
+                        <a class="btn-small red">Your Recipe</a>
                     {% endif %}
                     </div>
                     <div class="card-action">
