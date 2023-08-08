@@ -1,6 +1,6 @@
 # My Recipes  - Milestone Project III
 
-![Runescape Quiz Homepage Screenshot](https://i.ibb.co/4NrfrwM/Homepage-Screenshot.png)
+![My Recipes Homepage Screenshot](https://i.ibb.co/4NrfrwM/Homepage-Screenshot.png)
 
 [View Live Project Website](https://my-recipes-imran-d26bdf694841.herokuapp.com/)
 
