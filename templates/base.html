@@ -52,7 +52,6 @@
             {% if session.user|lower =="admin"|lower %}
             <li><a href="{{ url_for('get_categories') }}">Manage Cuisines</a></li>
             {% endif %}
-            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
             {% else %}
             <li><a href="{{ url_for('login') }}">Login</a></li>
