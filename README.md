@@ -236,6 +236,18 @@ Performance can be improved by using next gen images or compressing them.
 
 [Code Validation PDF](https://github.com/imransal/My-Recipes/blob/main/documentation/Code%20Validation.pdf)
 
+## Project Changes
+
+### Profile
+
+The Profile page was removed.
+
+## Future Development
+
+ - Include option to upload images for Recipes.
+ - Add filter to search so can include ingredients.
+ - Add allergens.
+
 ## Deployment
 
 The main  branch of this repository represents the latest version and has been used to deploy the website.
