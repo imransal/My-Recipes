@@ -6,19 +6,19 @@
 
 ## **Contents**
 
-- [Introduction](https://github.com/imransal/Runescape-Quiz/blob/main/README.md#introduction)
-- [UXD - User Experience Design](https://github.com/imransal/Runescape-Quiz/blob/main/README.md#UX---user-experience-design)
-- [Strategy Plane](https://github.com/imransal/Runescape-Quiz/blob/main/README.md#strategy-plane)
-    - [Creator Goals](https://github.com/imransal/Runescape-Quiz/blob/main/README.md#creator-goals)
-    - [User Stories](https://github.com/imransal/Runescape-Quiz/blob/main/README.md#user-stories)
-- [Scope Plane](https://github.com/imransal/Runescape-Quiz/blob/main/README.md#scope-plane)
-- [Structure Plane](https://github.com/imransal/Runescape-Quiz/blob/main/README.md#structure-plane)
-- [Skeleton Plane](https://github.com/imransal/Runescape-Quiz/blob/main/README.md#skeleton-plane)
-- [Surface Plane](https://github.com/imransal/Runescape-Quiz/blob/main/README.md#surface-plane)
-- [Technologies Used](https://github.com/imransal/Runescape-Quiz/blob/main/README.md#technologies-used)
-- [Testing](https://github.com/imransal/Runescape-Quiz/blob/main/README.md#testing)
-- [Deployment](https://github.com/imransal/Runescape-Quiz/blob/main/README.md#deployment)
-- [Credits](https://github.com/imransal/Runescape-Quiz/blob/main/README.md#credits)
+- [Introduction](https://github.com/imransal/My-Recipes/blob/main/README.md#introduction)
+- [UXD - User Experience Design](https://github.com/imransal/My-Recipes/blob/main/README.md#UX---user-experience-design)
+- [Strategy Plane](https://github.com/imransal/My-Recipes/blob/main/README.md#strategy-plane)
+    - [Creator Goals](https://github.com/imransal/My-Recipes/blob/main/README.md#creator-goals)
+    - [User Stories](https://github.com/imransal/My-Recipes/blob/main/README.md#user-stories)
+- [Scope Plane](https://github.com/imransal/My-Recipes/blob/main/README.md#scope-plane)
+- [Structure Plane](https://github.com/imransal/My-Recipes/blob/main/README.md#structure-plane)
+- [Skeleton Plane](https://github.com/imransal/My-Recipes/blob/main/README.md#skeleton-plane)
+- [Surface Plane](https://github.com/imransal/My-Recipes/blob/main/README.md#surface-plane)
+- [Technologies Used](https://github.com/imransal/My-Recipes/blob/main/README.md#technologies-used)
+- [Testing](https://github.com/imransal/My-Recipes/blob/main/README.md#testing)
+- [Deployment](https://github.com/imransal/My-Recipes/blob/main/README.md#deployment)
+- [Credits](https://github.com/imransal/My-Recipes/blob/main/README.md#credits)
 
 ## Introduction
 
